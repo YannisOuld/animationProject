@@ -1,4 +1,5 @@
 import Navigation from "./components/Navigation"
+import MovingText from "./components/MovingText"
 import Cursor from "./components/Cursor"
 import BlurryCursor from './components/Cursor'
 import Hero from "./components/Hero"
@@ -16,6 +17,7 @@ function App() {
         <BackgroundHero />
         <BlurryCursor isActive={isActive} />
         <Cursor />
+        <MovingText />
       </div>
       <div>
         <h1>mother of code</h1>
