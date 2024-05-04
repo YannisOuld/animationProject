@@ -57,7 +57,7 @@ export default function GradientCursor({ isActive }) {
     }, [isActive])
 
     return (
-        <div className='relative h-screen'>
+        <div className='absolute h-[100vh]'>
             {
                 [...Array(4)].map((_, i) => {
                     return (

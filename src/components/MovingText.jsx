@@ -27,8 +27,9 @@ export default function Index() {
                 },
             })
                 .to(title1.current, { y: -50 }, 0)
-                .to(imagesRef.current[1], { y: -150 }, 0)
-                .to(imagesRef.current[2], { y: -255 }, 0)
+                .to(imagesRef.current[1], { y: -350 }, { x: 150 }, 0)
+                .to(imagesRef.current[2], { y: 350 }, { x: 255 }, 0)
+                .to(imagesRef.current[3], { y: 350 }, { x: 255 }, 0)
 
             lettersRef.current.forEach((letter, i) => {
                 tl.to(letter, {
@@ -43,7 +44,7 @@ export default function Index() {
 
     return (
         <div ref={container} >
-            <div>
+            <div className=" block ">
                 <h1 ref={title1}>Welcome</h1>
                 <h1 >To the future</h1>
                 <div className="font-extrabold ">
@@ -56,17 +57,20 @@ export default function Index() {
                     </p>
                 </div>
             </div>
-            <div >
+            <div className="flex h-[900px] justify-center items-center p-3  w-full relative overflow-hidden">
                 {
                     images.map((image, i) => {
-                        return <div key={`i_${i}`} ref={el => el = imagesRef.current[i]} className="w-52 h-52">
-                            <Image
-                                src={image}
-                                placeholder="blur"
-                                alt="image"
-                                fill
-                            />
-                        </div>
+                        return (
+                            <div key={`i_${i}`} ref={el => imagesRef.current[i] = el} className={` absolute flex w-full justify-center h-80 z-[${i} ] right-[10px + ${i}] mr-[${i}]`}>
+                                <img
+                                    src={image}
+                                    placeholder="blur"
+                                    alt="image"
+                                    className={`w-3/4 h-3/4 object-contain object-center pr-${i + 1}`}
+
+                                />
+                            </div>
+                        )
                     })
                 }
             </div>
