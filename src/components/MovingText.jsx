@@ -47,13 +47,13 @@ export default function Index() {
     return (
         <div ref={container} className="w-full mx-auto p-20 flex justify-between">
             <div className=" block w-1/2">
-                <h1 ref={title1} className="text-extrabold text-white text-8xl ">Welcome To the future</h1>
+                <h1 ref={title1} className="text-extrabold text-white text-8xl  shadow-black">Welcome To the future</h1>
 
                 <div className="font-extrabold ">
                     <p>
                         {
                             word.split("").map((letter, i) => {
-                                return <span key={`l_${i}`} ref={el => lettersRef.current[i] = el}>{letter}</span>
+                                return <span key={`l_${i}`} ref={el => lettersRef.current[i] = el} className=" shadow-md shadow-black text-white font-extrabold text-lg m-1">{letter}</span>
                             })
                         }
                     </p>
