@@ -1,4 +1,5 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import GradientCursor from "./GradientCursor";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Picture1 from '../assets/picture1.jpg';
@@ -9,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger)
 const word = "making a nex gen website";
 
 export default function Index() {
+    const [isActive, setIsActive] = useState(false);
     const container = useRef(null);
     const images = [Picture1, Picture2, Picture3];
     const lettersRef = useRef([])
@@ -27,9 +29,9 @@ export default function Index() {
                 },
             })
                 .to(title1.current, { y: -50 }, 0)
-                .to(imagesRef.current[1], { y: -350 }, { x: 150 }, 0)
-                .to(imagesRef.current[2], { y: 350 }, { x: 255 }, 0)
-                .to(imagesRef.current[3], { y: 350 }, { x: 255 }, 0)
+                .to(imagesRef.current[1], { y: -350 }, 0)
+                .to(imagesRef.current[2], { y: -250 }, 0)
+                .to(imagesRef.current[3], { y: -50 }, 0)
 
             lettersRef.current.forEach((letter, i) => {
                 tl.to(letter, {
@@ -43,30 +45,42 @@ export default function Index() {
     }, [])
 
     return (
-        <div ref={container} >
-            <div className=" block ">
-                <h1 ref={title1}>Welcome</h1>
-                <h1 >To the future</h1>
+        <div ref={container} className="w-full mx-auto p-20 flex justify-between">
+            <div className=" block w-1/2">
+                <h1 ref={title1} className="text-extrabold text-white text-8xl ">Welcome To the future</h1>
+
                 <div className="font-extrabold ">
                     <p>
                         {
-                            word.split(" ").map((letter, i) => {
+                            word.split("").map((letter, i) => {
                                 return <span key={`l_${i}`} ref={el => lettersRef.current[i] = el}>{letter}</span>
                             })
                         }
                     </p>
                 </div>
+                <p onMouseOver={() => { setIsActive(true) }} onMouseLeave={() => { setIsActive(false) }} className="text-md  text-center text-white z-50 p-20">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque numquam ullam velit eius? Sunt, iure totam soluta praesentium exercitationem eum reprehenderit, recusandae temporibus modi nesciunt vero. Tempore officia soluta asperiores.
+                    Perspiciatis fugiat, natus cumque maiores quaerat doloremque. Suscipit iure quis officiis saepe placeat quas fugiat quisquam, eaque veniam esse minus nobis reprehenderit facere eius explicabo sint iste illo nisi neque?
+                    Sequi ullam illo dolorem iusto corporis labore nihil? Quo libero doloremque ab, odit mollitia cupiditate sed error. Dignissimos ut iure deserunt, pariatur doloribus consequuntur ipsam odit. Laborum nemo molestias perspiciatis?
+                    Veniam porro consequatur, tenetur rerum sint molestias doloribus pariatur voluptate sed saepe voluptatem, impedit suscipit possimus, quo doloremque facere minus ab aliquam asperiores non laudantium quis illo illum! Corporis, minus.
+                    Quasi amet non vitae tempore quia, ipsam temporibus. Commodi amet quam cumque laborum neque aperiam incidunt fugit qui quasi. Voluptatum animi laudantium necessitatibus quo iste, eos nihil minus itaque cum?
+                    Natus minima accusantium illo tenetur nostrum ad, quasi nesciunt quod ab rem fugit cum, ipsa asperiores dicta dolor ipsam? Nihil quisquam natus porro maxime dolorem nam consequatur voluptates magni rem!
+                    Nesciunt qui asperiores libero fugiat nostrum quibusdam nemo quae sint excepturi. Totam repellat, vel natus suscipit quos quaerat? Facilis, ullam velit. Harum fuga necessitatibus unde, at corrupti sequi consequuntur veniam?
+                    Iste expedita reiciendis amet totam alias provident rem inventore tempore error numquam enim eligendi dolores fuga, temporibus ad quas commodi, non, asperiores eveniet vitae iure beatae? Amet rem assumenda ex.
+
+                </p>
+                <GradientCursor isActive={isActive} />
             </div>
-            <div className="flex h-[900px] justify-center items-center p-3  w-full relative overflow-hidden">
+            <div className="flex h-[900px] justify-center items-end p-3  w-1/2 relative overflow-hidden">
                 {
                     images.map((image, i) => {
                         return (
-                            <div key={`i_${i}`} ref={el => imagesRef.current[i] = el} className={` absolute flex w-full justify-center h-80 z-[${i} ] right-[10px + ${i}] mr-[${i}]`}>
+                            <div key={`i_${i}`} ref={el => imagesRef.current[i] = el} className={` relative overflow-visible  w-3/4 h-80 z-[${i}]`}>
                                 <img
                                     src={image}
                                     placeholder="blur"
                                     alt="image"
-                                    className={`w-3/4 h-3/4 object-contain object-center pr-${i + 1}`}
+                                    className={`w-[500px] h-[400px] overflow-visible absolute object-cover object-center right-[${i * 5}px] z-${i}`}
 
                                 />
                             </div>

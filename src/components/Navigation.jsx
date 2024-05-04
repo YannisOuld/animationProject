@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
+
 
 const Navigation = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
 
     return (
-        <div>
-            <button onClick={toggleMenu}>Open Menu</button>
-            {isOpen && (
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                </ul>
-            )}
-        </div>
+        <nav className='relative w-full h-20 bg-slate-700 flex justify-end' >
+            <ul className='flex justify-between items-center font-white font-bold text-xl mx-8'>
+                <li><a href="#" className='text-white text-lg mx-2' >Accueil</a></li>
+                <li><a href="#" className='text-white text-lg mx-2'>Portfolio</a></li>
+                <li><a href="#" className='text-white text-lg mx-2'>contact</a></li>
+            </ul>
+
+        </nav>
     );
 };
 
