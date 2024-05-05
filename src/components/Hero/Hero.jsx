@@ -1,5 +1,5 @@
 import React from 'react'
-import GradientCursor from "./GradientCursor";
+import GradientCursor from "../Cursor/GradientCursor";
 import { useState } from 'react';
 
 export default function Hero() {

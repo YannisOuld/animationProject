@@ -1,10 +1,10 @@
 import Navigation from "./components/Navigation"
 import Lenis from '@studio-freight/lenis'
-import MovingText from "./components/MovingText"
-import Cursor from "./components/Cursor"
-import BlurryCursor from './components/Cursor'
-import Hero from "./components/Hero"
-import BackgroundHero from "./components/BackgroundHero"
+import MovingText from "./components/Scroll/MovingText"
+import Cursor from "./components/Cursor/Cursor"
+import BlurryCursor from './components/Cursor/Cursor'
+import Hero from "./components/Hero/Hero"
+import BackgroundHero from "./components/Hero/BackgroundHero"
 import Picture1 from "./assets/picture1.jpg"
 import { useState, useEffect } from 'react';
 

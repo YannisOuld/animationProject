@@ -2,9 +2,9 @@ import { useLayoutEffect, useRef } from "react";
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Picture1 from '../assets/picture1.jpg';
-import Picture2 from '../assets/picture2.jpg';
-import Picture3 from '../assets/picture3.jpg';
+import Picture1 from '../../assets/picture1.jpg';
+import Picture2 from '../../assets/picture2.jpg';
+import Picture3 from '../../assets/picture3.jpg';
 
 gsap.registerPlugin(ScrollTrigger)
 const word = "making a nex gen website";
@@ -26,9 +26,10 @@ export default function Index() {
                     start: "top bottom",
                     end: "bottom top",
                     scrub: true,
+                    yoyo: true
                 },
             })
-                .to(title1.current, { y: -50 }, 0)
+                .to(title1.current, { y: 0, stagger: 0.05, delay: 0.2, duration: 0.1 }, 0)
                 .to(imagesRef.current[1], { y: -350 }, 0)
                 .to(imagesRef.current[2], { y: -250 }, 0)
                 .to(imagesRef.current[0], { y: -50 }, 0)
@@ -36,7 +37,7 @@ export default function Index() {
             lettersRef.current.forEach((letter, i) => {
                 tl.to(letter, {
                     top: Math.floor(Math.random() * -75) - 25,
-                }, 0)
+                }, 0.1)
             })
 
         })
@@ -51,10 +52,10 @@ export default function Index() {
 
 
                 <div className="font-extrabold ">
-                    <p>
+                    <p >
                         {
-                            word.split("").map((letter, i) => {
-                                return <span key={`l_${i}`} ref={el => lettersRef.current[i] = el} className=" shadow-md shadow-black text-white font-extrabold text-lg m-1">{letter}</span>
+                            word.split(" ").map((letter, i) => {
+                                return <span key={`l_${i}`} ref={el => lettersRef.current[i] = el} className="  text-white font-extrabold text-2xl mr-2">{letter}</span>
                             })
                         }
                     </p>
@@ -75,12 +76,12 @@ export default function Index() {
                 {
                     images.map((image, i) => {
                         return (
-                            <div key={`i_${i}`} ref={el => imagesRef.current[i] = el} className={` relative overflow-visible  w-3/4 h-80 z-[${i}]`}>
+                            <div key={`i_${i}`} ref={el => imagesRef.current[i] = el} className={` relative  w-3/4 h-80 z-[${i}]`}>
                                 <img
                                     src={image}
                                     placeholder="blur"
                                     alt="image"
-                                    className={`w-[500px] h-[400px] overflow-visible absolute object-cover object-center right-[${i * 5}px] z-${i}`}
+                                    className={`w-[500px] h-[400px] overflow-visible absolute object-cover object-center right-[${i * 5}px] z-${i} `}
 
                                 />
                             </div>
