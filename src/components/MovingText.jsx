@@ -31,7 +31,7 @@ export default function Index() {
                 .to(title1.current, { y: -50 }, 0)
                 .to(imagesRef.current[1], { y: -350 }, 0)
                 .to(imagesRef.current[2], { y: -250 }, 0)
-                .to(imagesRef.current[3], { y: -50 }, 0)
+                .to(imagesRef.current[0], { y: -50 }, 0)
 
             lettersRef.current.forEach((letter, i) => {
                 tl.to(letter, {
@@ -45,9 +45,10 @@ export default function Index() {
     }, [])
 
     return (
-        <div ref={container} className="w-full mx-auto p-20 flex justify-between">
+        <div ref={container} className="w-full mx-auto p-20 flex justify-between bg-slate-950">
             <div className=" block w-1/2">
-                <h1 ref={title1} className="text-extrabold text-white text-8xl  shadow-black">Welcome To the future</h1>
+                <h1 onMouseOver={() => { setIsActive(true) }} onMouseLeave={() => { setIsActive(false) }} ref={title1} className="text-[3vw]   text-white z-50 pr-20 pt-20">Welcome To the future</h1>
+                <GradientCursor isActive={isActive} />
 
                 <div className="font-extrabold ">
                     <p>
@@ -58,7 +59,7 @@ export default function Index() {
                         }
                     </p>
                 </div>
-                <p onMouseOver={() => { setIsActive(true) }} onMouseLeave={() => { setIsActive(false) }} className="text-md  text-center text-white z-50 p-20">
+                <p className="text-md  text-center text-white z-50 p-20">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque numquam ullam velit eius? Sunt, iure totam soluta praesentium exercitationem eum reprehenderit, recusandae temporibus modi nesciunt vero. Tempore officia soluta asperiores.
                     Perspiciatis fugiat, natus cumque maiores quaerat doloremque. Suscipit iure quis officiis saepe placeat quas fugiat quisquam, eaque veniam esse minus nobis reprehenderit facere eius explicabo sint iste illo nisi neque?
                     Sequi ullam illo dolorem iusto corporis labore nihil? Quo libero doloremque ab, odit mollitia cupiditate sed error. Dignissimos ut iure deserunt, pariatur doloribus consequuntur ipsam odit. Laborum nemo molestias perspiciatis?
@@ -69,7 +70,6 @@ export default function Index() {
                     Iste expedita reiciendis amet totam alias provident rem inventore tempore error numquam enim eligendi dolores fuga, temporibus ad quas commodi, non, asperiores eveniet vitae iure beatae? Amet rem assumenda ex.
 
                 </p>
-                <GradientCursor isActive={isActive} />
             </div>
             <div className="flex h-[900px] justify-center items-end p-3  w-1/2 relative overflow-hidden">
                 {
