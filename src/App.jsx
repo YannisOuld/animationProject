@@ -1,6 +1,7 @@
 import Navigation from "./components/Navigation"
 import Lenis from '@studio-freight/lenis'
 import MovingText from "./components/Scroll/MovingText"
+import SmoothScroll from "./components/Scroll/SmoothScroll"
 import Cursor from "./components/Cursor/Cursor"
 import BlurryCursor from './components/Cursor/Cursor'
 import Hero from "./components/Hero/Hero"
@@ -24,6 +25,9 @@ function App() {
   return (
     <>
       <Navigation />
+      <div className="block h-[140vh] my-32">
+        <SmoothScroll />
+      </div>
       <div className="relative flex justify-around items-center bg-slate-400">
         <img src={Picture1} alt="photo" className="rounded-full w-1/4" />
         <div className="relative bg-slate-400">

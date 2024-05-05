@@ -17,7 +17,7 @@ export default function Index() {
                 trigger: document.documentElement,
                 scrub: true,
                 start: "top",
-                end: "+=500px",
+                end: "+=800px",
             },
         })
 
@@ -30,7 +30,7 @@ export default function Index() {
         <div className="relative w-full flex justify-center">
             <div className="w-full h-[140vh] absolute brightness-[60%] " ref={background}>
                 <img
-                    src={Picture6}
+                    src={Picture5}
                     fill={true}
                     alt="background image"
                     priority={true}
@@ -40,7 +40,7 @@ export default function Index() {
             <div className="flex justify-center relative mt-[35vh] ">
                 <div ref={introImage} data-scroll data-scroll-speed="0.3" className=" brightness-[70%]  w-[350px] h-[475px] absolute ">
                     <img
-                        src={Picture5}
+                        src={Picture6}
                         alt="intro image"
                         fill={true}
                         priority={true}
