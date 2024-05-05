@@ -1,5 +1,5 @@
-import { useLayoutEffect, useRef, useState } from "react";
-import GradientCursor from "./GradientCursor";
+import { useLayoutEffect, useRef } from "react";
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Picture1 from '../assets/picture1.jpg';
@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger)
 const word = "making a nex gen website";
 
 export default function Index() {
-    const [isActive, setIsActive] = useState(false);
+
     const container = useRef(null);
     const images = [Picture1, Picture2, Picture3];
     const lettersRef = useRef([])
@@ -47,8 +47,8 @@ export default function Index() {
     return (
         <div ref={container} className="w-full mx-auto p-20 flex justify-between bg-slate-950">
             <div className=" block w-1/2">
-                <h1 onMouseOver={() => { setIsActive(true) }} onMouseLeave={() => { setIsActive(false) }} ref={title1} className="text-[3vw]   text-white z-50 pr-20 pt-20">Welcome To the future</h1>
-                <GradientCursor isActive={isActive} />
+                <h1 ref={title1} className="text-[3vw]   text-white z-50 pr-20 pt-20">Welcome To the future</h1>
+
 
                 <div className="font-extrabold ">
                     <p>
