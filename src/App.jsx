@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <Navigation />
-      <div className="block h-[140vh] my-32">
+      <div className="block h-[1000px] w-full my-32">
         <SmoothScroll />
       </div>
       <div className="relative flex justify-around items-center bg-slate-400">
