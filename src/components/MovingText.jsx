@@ -59,7 +59,7 @@ export default function Index() {
                         }
                     </p>
                 </div>
-                <p className="text-md  text-center text-white z-50 p-20">
+                <p className="text-md  text-white z-50 mr-40 mt-28 tracking-wider">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque numquam ullam velit eius? Sunt, iure totam soluta praesentium exercitationem eum reprehenderit, recusandae temporibus modi nesciunt vero. Tempore officia soluta asperiores.
                     Perspiciatis fugiat, natus cumque maiores quaerat doloremque. Suscipit iure quis officiis saepe placeat quas fugiat quisquam, eaque veniam esse minus nobis reprehenderit facere eius explicabo sint iste illo nisi neque?
                     Sequi ullam illo dolorem iusto corporis labore nihil? Quo libero doloremque ab, odit mollitia cupiditate sed error. Dignissimos ut iure deserunt, pariatur doloribus consequuntur ipsam odit. Laborum nemo molestias perspiciatis?
