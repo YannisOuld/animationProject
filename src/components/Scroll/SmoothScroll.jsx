@@ -1,13 +1,24 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef, useEffect } from 'react'
 import Picture5 from '../../assets/picture5.jpg';
 import Picture7 from '../../assets/picture7.jpg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+
+
 export default function Index() {
 
     const background = useRef(null);
     const introImage = useRef(null);
+
+    useEffect(() => {
+        (
+            async () => {
+                const LocomotiveScroll = (await import('locomotive-scroll')).default
+                const locomotiveScroll = new LocomotiveScroll();
+            }
+        )()
+    }, [])
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -33,7 +44,7 @@ export default function Index() {
                     src={Picture5}
                     alt="background image"
                     className='object-cover'
-                    priority='high'
+                    fetchPriority='high'
                 />
             </div>
             <div className="flex justify-center relative mt-[35vh] ">
@@ -42,7 +53,7 @@ export default function Index() {
                         src={Picture7}
                         alt="intro image"
                         className='object-cover object-top'
-                        priority='high'
+                        fetchPriority='high'
                     />
                 </div>
                 <h1 data-scroll data-scroll-speed="0.5" className='text-white text-7xl z-30 text-center whitespace-nowrap ' >SMOOTH SCROLL</h1>

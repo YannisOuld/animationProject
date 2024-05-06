@@ -18,16 +18,20 @@ function App() {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }
-
+    (
+      async () => {
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+        const locomotiveScroll = new LocomotiveScroll();
+      }
+    )()
     requestAnimationFrame(raf)
   }, [])
+
+
   const [isActive, setIsActive] = useState(false);
   return (
     <>
       <Navigation />
-      <div className="block h-[1000px] w-full my-32">
-        <SmoothScroll />
-      </div>
       <div className="relative flex justify-around items-center bg-slate-400">
         <img src={Picture1} alt="photo" className="rounded-full w-1/4" />
         <div className="relative bg-slate-400">
@@ -39,6 +43,7 @@ function App() {
       </div>
       <MovingText onMouseOver={() => { setIsActive(true) }} onMouseLeave={() => { setIsActive(false) }} />
       <div>
+        <SmoothScroll />
         <h1>mother of code</h1>
       </div>
       <p>

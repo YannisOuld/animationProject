@@ -7,7 +7,7 @@ import Picture2 from '../../assets/picture2.jpg';
 import Picture3 from '../../assets/picture3.jpg';
 
 gsap.registerPlugin(ScrollTrigger)
-const word = "making a nex gen website";
+
 
 export default function Index() {
 
@@ -30,15 +30,11 @@ export default function Index() {
                 },
             })
                 .to(title1.current, { y: 0, stagger: 0.05, delay: 0.2, duration: 0.1 }, 0)
-                .to(imagesRef.current[1], { y: -350 }, 0)
-                .to(imagesRef.current[2], { y: -250 }, 0)
-                .to(imagesRef.current[0], { y: -50 }, 0)
+                .to(imagesRef.current[1], { y: -550 }, 0)
+                .to(imagesRef.current[2], { y: -350 }, 0)
+                .to(imagesRef.current[0], { y: -100 }, 0)
 
-            lettersRef.current.forEach((letter, i) => {
-                tl.to(letter, {
-                    top: Math.floor(Math.random() * -75) - 25,
-                }, 0.1)
-            })
+
 
         })
 
@@ -52,12 +48,8 @@ export default function Index() {
 
 
                 <div className="font-extrabold ">
-                    <p >
-                        {
-                            word.split(" ").map((letter, i) => {
-                                return <span key={`l_${i}`} ref={el => lettersRef.current[i] = el} className="  text-white font-extrabold text-2xl mr-2">{letter}</span>
-                            })
-                        }
+                    <p className="text-white text-4xl">
+                        making the impossible possible
                     </p>
                 </div>
                 <p className="text-md  text-white z-50 mr-40 mt-28 tracking-wider">
