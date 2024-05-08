@@ -44,7 +44,8 @@ export default function Index() {
                     src={Picture5}
                     alt="background image"
                     className='object-cover'
-                    fetchPriority='high'
+                    priority={'high'}
+
                 />
             </div>
             <div className="flex justify-center relative mt-[35vh] ">
@@ -53,7 +54,8 @@ export default function Index() {
                         src={Picture7}
                         alt="intro image"
                         className='object-cover object-top'
-                        fetchPriority='high'
+                        priority={'high'}
+
                     />
                 </div>
                 <h1 data-scroll data-scroll-speed="0.5" className='text-white text-7xl z-30 text-center whitespace-nowrap ' >SMOOTH SCROLL</h1>
