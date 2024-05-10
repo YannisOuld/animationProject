@@ -13,7 +13,6 @@ export default function Index() {
 
     const container = useRef(null);
     const images = [Picture1, Picture2, Picture3];
-    const lettersRef = useRef([])
     const imagesRef = useRef([])
     const title1 = useRef(null);
 
